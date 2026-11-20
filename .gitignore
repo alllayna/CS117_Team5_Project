@@ -208,3 +208,11 @@ results.csv
 fuzz-sources/
 fuzz-datasets/
 fuzz-models/
+
+# CS117 Team 5 result figures
+!results/*.png
+
+# CS117 Valorant project files
+!valorant_runs/
+!valorant_runs/**/
+!valorant_runs/**/*
