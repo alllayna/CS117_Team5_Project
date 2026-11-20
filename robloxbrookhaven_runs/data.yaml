@@ -1,0 +1,9 @@
+
+path: .
+train: /Users/alay/Downloads/cs117_proj_repos/ultralytics/robloxbrookhaven_runs/images/train
+val: /Users/alay/Downloads/cs117_proj_repos/ultralytics/robloxbrookhaven_runs/images/val
+test: /Users/alay/Downloads/cs117_proj_repos/ultralytics/robloxbrookhaven_runs/images/test
+
+names:
+  0: person
+  1: not person
