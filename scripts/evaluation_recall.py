@@ -81,7 +81,9 @@ def main():
         n_pred += len(pred)
         for box, hit in zip(gt, detected):
             bw, bh = box[2] - box[0], box[3] - box[1]
-            rows.append([path.name, round(bw, 1), round(bh, 1), round(bh / h, 4), round(bw * bh / (w * h), 5), int(hit)])
+            rows.append(
+                [path.name, round(bw, 1), round(bh, 1), round(bh / h, 4), round(bw * bh / (w * h), 5), int(hit)]
+            )
 
     summary = {
         "dataset": args.name,
@@ -93,7 +95,13 @@ def main():
         "recall": round(n_tp / n_gt, 4) if n_gt else None,
         "precision": round(n_tp / n_pred, 4) if n_pred else None,
         "false_detections_per_image": round((n_pred - n_tp) / len(images), 3) if images else None,
-        "settings": {"model": args.model, "conf": args.conf, "iou_match": args.iou, "imgsz": args.imgsz, "classes": [0]},
+        "settings": {
+            "model": args.model,
+            "conf": args.conf,
+            "iou_match": args.iou,
+            "imgsz": args.imgsz,
+            "classes": [0],
+        },
     }
     (out / f"{args.name}.json").write_text(json.dumps(summary, indent=2))
     with open(out / f"{args.name}_boxes.csv", "w", newline="") as f:
